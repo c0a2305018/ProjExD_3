@@ -179,7 +179,7 @@ def main():
                 txt = fonto.render("GameOver", True, (255, 0, 0))
                 screen.blit(txt, [WIDTH/2-150, HEIGHT/2])
                 pg.display.update()
-                time.sleep(1)
+                time.sleep(5)
                 return
         # if not (beam is None or bomb is None):
         for i, bomb in enumerate(bombs):
@@ -187,7 +187,7 @@ def main():
                 if beam.rct.colliderect(bomb.rct):  # ビームと爆弾が衝突したら
                     beam = None
                     bombs[i] = None
-                    score.value += 1       #scoreプラス１したいけどできない
+                    score.value += 1       #scoreプラス1
                     bird.change_img(6, screen)
                     pg.display.update()
         bombs = [bomb for bomb in bombs if bomb is not None]
