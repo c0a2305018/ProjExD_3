@@ -162,6 +162,11 @@ def main():
             pg.display.update()
             time.sleep(1)
             return
+        if not (beam is None or bomb is None):
+            if beam.rct.colliderect(bomb.rct):  # ビームと爆弾が衝突したら
+                beam = None
+                bomb = None
+                pg.display.update()
 
         key_lst = pg.key.get_pressed()
         bird.update(key_lst, screen)
